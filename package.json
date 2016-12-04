@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "es6-promise": "latest",
-    "js-yaml": "latest"
+    "js-yaml": "latest",
+    "node-telegram-bot-api": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",

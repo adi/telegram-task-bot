@@ -1,17 +1,9 @@
-import * as http from 'http';
 import config from './config';
+import * as TelegramBot from 'node-telegram-bot-api';
 
-(async function main(): Promise<void> {
-  try {
-    const appServer = http.createServer((req, res) => {
-      res.write('It works!');
-      res.end();
-    });
-    appServer.listen(config.api.port, () => {
-      console.log(`API active at http://localhost:${config.api.port}`);
-    });
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-}());
+const bot = new TelegramBot(config.telegram.token, { polling: true });
+bot.onText(/\/echo (.+)/, function (msg: any, match: any) {
+  var fromId = msg.from.id;
+  var resp = match[1];
+  bot.sendMessage(fromId, resp);
+});
