@@ -1,0 +1,3 @@
+telegram:
+  token: <token_provided_by_botfather>
+  webhook: false

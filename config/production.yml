@@ -1,0 +1,5 @@
+telegram:
+  webhook: true
+  externalUrl: https://bot.example.com
+  host: localhost
+  port: 9999
